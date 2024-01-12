@@ -16,9 +16,16 @@ function onFormInput() {
 }
 
 function onWindowLoad() {
-  const saveObj = JSON.parse(localStorage.getItem('feedback-form-state'));
-  refs.input.value = saveObj.email;
-  refs.textarea.value = saveObj.message;
+  //   const saveObj = JSON.parse(localStorage.getItem('feedback-form-state'));
+  //   refs.input.value = saveObj.email;
+  //   refs.textarea.value = saveObj.message;
+  const saveObj = localStorage.getItem('feedback-form-state');
+  console.log(saveObj);
+  if (saveObj) {
+    saveObj.JSON.parse(saveObj);
+    refs.input.value = saveObj.email;
+    refs.textarea.value = saveObj.message;
+  }
 }
 
 function onFormSubmit(evt) {
