@@ -1,3 +1,27 @@
+/* main */
+
+.main-title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.main-item {
+  list-style: auto;
+  padding-bottom: 20px;
+}
+
+.main-item a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.main-item a:hover {
+  text-decoration-line: underline;
+}
+
+/* gallery */
+
 .gallery {
   display: flex;
   gap: 24px;
@@ -10,7 +34,6 @@
 
 .gallery-item {
   list-style: none;
-
   width: calc((100% - 48px) / 3);
 }
 
@@ -28,4 +51,38 @@
 .gallery-image:hover,
 .gallery-image:focus {
   transform: scale(1.03);
+}
+
+/* form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  margin: 40px auto;
+}
+
+.feedback-form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.feedback-form button {
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  padding: 8px;
+  font: inherit;
+}
+
+textarea {
+  resize: none;
 }
