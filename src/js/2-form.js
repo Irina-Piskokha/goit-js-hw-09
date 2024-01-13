@@ -11,17 +11,13 @@ onWindowLoad();
 
 function onFormInput() {
   const keyObj = {
-    email: refs.input.value,
-    message: refs.textarea.value,
+    email: refs.input.value.trim(),
+    message: refs.textarea.value.trim(),
   };
   localStorage.setItem('feedback-form-state', JSON.stringify(keyObj));
 }
 
 function onWindowLoad() {
-  //   const saveObj = JSON.parse(localStorage.getItem('feedback-form-state'));
-  //   console.log(saveObj);
-  //   refs.input.value = saveObj.email;
-  //   refs.textarea.value = saveObj.message;
   let saveObj = localStorage.getItem('feedback-form-state');
   if (saveObj) {
     saveObj = JSON.parse(saveObj);
