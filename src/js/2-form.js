@@ -7,7 +7,9 @@ const refs = {
 refs.form.addEventListener('input', onFormInput);
 refs.form.addEventListener('submit', onFormSubmit);
 
-function onFormInput(evt) {
+onWindowLoad();
+
+function onFormInput() {
   const keyObj = {
     email: refs.input.value,
     message: refs.textarea.value,
@@ -20,16 +22,13 @@ function onWindowLoad() {
   //   console.log(saveObj);
   //   refs.input.value = saveObj.email;
   //   refs.textarea.value = saveObj.message;
-
+  let saveObj = localStorage.getItem('feedback-form-state');
   if (saveObj) {
-    const saveObj = localStorage.getItem('feedback-form-state');
     saveObj = JSON.parse(saveObj);
     refs.input.value = saveObj.email;
     refs.textarea.value = saveObj.message;
   }
 }
-
-onWindowLoad();
 
 function onFormSubmit(evt) {
   evt.preventDefault();
